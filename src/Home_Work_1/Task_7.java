@@ -2,18 +2,17 @@ package Home_Work_1;
 
 public class Task_7 {
     public static void main(String[] args) {
-        int sum1 = 0;
-        int sum2 = 0;
-        int sumMax;
-        int[] mass = {1, 0, 4, 8, 9, 1};
-        for (int i = 0; i < mass.length; i++) {
-            if (i % 2 == 0) {
-                sum1 = sum1 + mass[i];
-            } else {
-                sum2 = sum2 + mass[i];
-            }
+        int[] array = {2, 1, 5, 6, 0, 3, 10, 20};
+        int index = 0;
+        int summaMax = array[index];
+        for (int i = 1; i < array.length; i++) {
+            int dop = summaMax;
+            summaMax = Math.max(index + array[i], array[i]);
+            index = dop;
+            summaMax = Math.max(dop, summaMax);
+
         }
-        sumMax = Math.max(sum1, sum2);
-        System.out.println("Максимальный элемент: " + sumMax);
+        System.out.println("Максимально возможная сумма: "+ summaMax);
     }
 }
+
